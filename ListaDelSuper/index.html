@@ -1,0 +1,111 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="manifest" href="./manifest.json">
+            <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+            <meta name="theme-color" content="#607D8B"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-pink.min.css" />
+            <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+            <link rel="stylesheet" href="css/style.css">
+            <title>SuperLIsta</title>
+        </head>
+        <body>
+            <!-- Always shows a header, even in smaller screens. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Super Lista Productos</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <!-- <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a> -->
+                </nav>
+            </div>
+            </header>
+            <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Servicios</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Servicio 1</a>
+                <a class="mdl-navigation__link" href="">Servicio 2</a>
+                <a class="mdl-navigation__link" href="">Servicio 3</a>
+                <a class="mdl-navigation__link" href="">Servicio 4</a>
+            </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <!-- imagen hero -->
+                    <div><img src="/recursos/supermarket2.jpg" alt=""></div>
+
+                    <!-- barra de progreso -->
+                    <progress min="0" max="100" value="0"></progress>
+                    
+                    <!-- modal dialog - borrar todo -->
+
+                    <dialog class="mdl-dialog">
+                        <h4 class="mdl-dialog__title">Confirma Borrar Todo?</h4>
+                        <br>
+                        <div class="mdl-dialog__actions">
+                            <button type="button" class="mdl-button aceptar">Aceptar</button>
+                            <button type="button" class="mdl-button cancelar">Cancelar</button>
+                        </div>
+                    </dialog>
+
+
+                    <div class="contenedor">
+                        <!-- Campo de ingreso nombre producto -->
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label w-40">
+                            <input id="ingProd" class="mdl-textfield__input" type="text">
+                            <label class="mdl-textfield__label" for="sample3">Ingrese Producto</label>
+                        </div>
+                        <!-- boton para agregar producto -->
+                        <div class="w-30 ml-item">
+                            <button id="btnEntradaProd" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                                <i class="material-icons">add_shopping_cart</i>
+                            </button>
+                        </div>
+                        <!-- boton para borrar todos los producto -->
+                        <div class="w-30">
+                            <button id="btnBorrarProd" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                Borrar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Productos -->
+                    <div id="lista"></div>
+                    
+                    <!-- Push -->
+
+                    <section>
+                        <p>
+                            <button disabled class=" js-push-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-efect">
+                                Habilitar Notificaciones Push
+                            </button>
+                        </p>
+                        <div class="subscription-details js-subscription-details is-visible">
+                            <pre><code class="js-subscription-json"></code></pre>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+            <!-- libreria jQuery-->
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+            <!-- template engine o motor de plantilla -->
+            <script src="js/handlebars.min-v4.7.7.js"></script>
+            <script src="js/api.js"></script>
+            <script src="js/push.js"></script>
+            <script src="js/index.js"></script>
+        </body>
+        </html>
